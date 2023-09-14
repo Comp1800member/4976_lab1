@@ -1,0 +1,29 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+<div>
+
+
+<div>
+    <form method="post">
+        <h3>Year</h3>
+        <div>
+            <input type="number" name="year" id="year" />
+        </div>
+        <button type="submit" class="btn btn-info">Get Zodiac</button>
+        <button id="clear" type="submit" value="clear" class="btn btn-success">Clear</button>
+    </form>
+</div>
+
+@if (!string.IsNullOrEmpty(Model.zodiacSign))
+{
+    <div class="alert alert-success mt-3">
+        <p>@Model.zodiacSign</p>
+        <img src="@Model.zodiacImage" />
+    </div>
+} 
+
+</div>
+
